@@ -37,9 +37,11 @@ public class ExpandableFieldSerializer extends StdSerializer<Object> {
     }
 
     private boolean isWantedPath(final String namePath) {
+        final String lowerCaseNamePath = namePath.toLowerCase();
+
         return expandFieldPathNames.stream()
                 .map(String::toLowerCase)
-                .anyMatch(chain -> chain.startsWith(namePath));
+                .anyMatch(chain -> chain.startsWith(lowerCaseNamePath));
     }
 
     private String getCurrentNamePath(final JsonGenerator jsonGenerator) {
