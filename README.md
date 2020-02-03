@@ -110,3 +110,8 @@ public enum PhoneType {
     }
 }
 ```
+
+## Troubles Serializing Map
+Currenty what serializing a map, there is no way to distinguish map entries as expandable or not, so all entries will still be serialized. It is advised to convert the map to an object that makes use of the custom expandable annotations.
+
+Heres a useful link for converting maps to a POJO object. https://stackoverflow.com/questions/25447611/how-to-deserialize-a-mapstring-object-into-pojo
